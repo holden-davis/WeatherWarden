@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta></meta>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="icon" type="image/png" href="img/favicon.ico">
+</head>
+<body onload="geoReq(), updateReminder(), startTime()">
+    <div class="dropdown" id="dropdown">
+        <button class="dropbtn" id="dropbtn">
+            <div id="bar" class="bar"></div>
+            <div id="bar" class="bar"></div>
+            <div id="bar" class="bar"></div>
+        </button>
+        <div class= "linkcontainer" id="linkcontainer">
+            <a id="placelink" class="placelink" href="#timeheader">HOME</a>
+            <a id="placelink" class="placelink" href="#predata_label">LOCATION</a>
+            <a id="placelink" class="placelink" href="#current_label">CURRENT</a>
+            <a id="placelink" class="placelink" href="#labelhourly">HOURLY</a>
+            <a id="placelink" class="placelink" href="#labeldaily">DAILY</a>
+            <a id="placelink" class="placelink" href="pages/about.html">ABOUT</a>
+        </div>
+    </div>
+    <div class = "timeheader" id="timeheader"></div>
+    <div class = "update-reminder" id = "update-reminder"></div>
+    <div class = "severe_alert" id = "severe_alert">Alert</div>
+    <div class = "predata_label" id = "predata_label">Location</div>
+    <table class = "predata_table" id = "predata_table">
+    <thead class = "thead" id = "thead">
+        <tr id = "predata_header"  class = "predata_header">
+            <th id="predataheaderlat" class="predatah">Latitude</th>
+            <th id="predataheaderlon" class="predatah">Longitude</th>
+            <th id="predataheadertz" class="predatah">Time Zone</th>
+            <th id="predataheadertzo" class="predatah">Time Offset</th>
+        </tr>
+    </thead>
+    <tbody class = "tbody" id = "tbody">
+        <tr id = "predata_row"  class = "predata_row">
+            <td id="predatalat" class="predata "></td>
+            <td id="predatalon" class="predata"></td>
+            <td id="predatatz" class="predata"></td>
+            <td id="predatatzo" class="predata"></td>
+        </tr>
+    </tbody>
+    </table>
+    <div class = "current_label" id = "current_label">Current Weather Conditions</div>
+    <table class = "current_table" id = "current_table">
+        <tr class = "current_header" id = "current_header">
+            <th id="time" class="currenth">Time</th>
+            <th id="sunrise" class="currenth">Sunrise</th>
+            <th id="sunset" class="currenth">Sunset</th>
+            <th id="temp" class="currenth">Temp</th>
+            <th id="feelslike" class="currenth">Feels</th>
+            <th id="pressure" class="currenth">Pressure</th>
+            <th id="humidity" class="currenth">Humidity</th>
+            <th id="dewpoint" class="currenth">Dew Point</th>
+            <th id="uvi" class="currenth">UVI</th>
+            <th id="clouds" class="currenth">Clouds</th>
+            <th id="visibility" class="currenth">Visibility</th>
+            <th id="windspeed" class="currenth">Wind Speed</th>
+            <th id="winddeg" class="currenth">Wind Deg</th>
+            <th id="id" class="currenth">ID</th>
+            <th id="main" class="currenth">Description</th>
+            <th id="description" class="currenth">Detailed</th>
+            <th id="icon" class="currenth">Icon</th>
+        </tr>
+            <tr class = "current_row" id = "current_row">
+                <td id="currenttime" class="current"></td>
+                <td id="currentsunrise" class="current"></td>
+                <td id="currentsunset" class="current"></td>
+                <td id="currenttemp" class="current"></td>
+                <td id="currentfeelslike" class="current"></td>
+                <td id="currentpressure" class="current"></td>
+                <td id="currenthumidity" class="current"></td>
+                <td id="currentdewpoint" class="current"></td>
+                <td id="currentuvi" class="current"></td>
+                <td id="currentclouds" class="current"></td>
+                <td id="currentvisibility" class="current"></td>
+                <td id="currentwindspeed" class="current"></td>
+                <td id="currentwinddeg" class="current"></td>
+                <td id="currentid" class="current"></td>
+                <td id="currentmain" class="current"></td>
+                <td id="currentdescription" class="current"></td>
+                <td id="currenticon" class="current"></td>
+            </tr>
+    </table>
+</body>
+<script src="script/fullscript.js"></script>
+</body>
+</html>

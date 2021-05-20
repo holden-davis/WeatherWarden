@@ -1,0 +1,395 @@
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	.tablehourly, .tableheadhourly, .tbodyhourly, .thhourly, .tdhourly, .trhourly, .tabledaily, .tableheaddaily, .tbodydaily, .thdaily, .tddaily, .trdaily, .predata_table, .thead, .tbody, .predatah, .predata, .predata_header, .predata_row, .currenth, .current, .current_header, .current_row{ 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.tableheadhourly .headrowhourly, .tableheaddaily .headrowdaily, .thead .predata_header, .current_header{ 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+    .trhourly, .trdaily, .predata_header, .predata_row, .current_header, .current_row{ border: 0.10vw solid rgba(0, 0, 0, 0.5); }
+    
+	.tdhourly, .tddaily, .predata, .predatah, .current, .currenth{ 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 0.10vw solid rgba(0, 0, 0, 0.5); 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	.tdhourly:before, .tddaily:before, .predata:before, .predatah:before, .current:before, .currenth:before{ 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		left: 6px;
+        width: 45%; 
+        text-align: center;
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+    
+	/*
+	Label the data
+    */
+
+    .update-reminder, .current_label, .labelhourly, .labeldaily, .predata_label
+    {
+        width : 100vw !important;
+    }
+
+    .current:nth-of-type(1):before{content: "Time";}
+    .current:nth-of-type(1)
+    {
+        color: deepskyblue;
+        background-color: rgba(0, 0, 0, 0.75);
+    }
+    .current:nth-of-type(2):before{content: "Sunrise";}
+    .current:nth-of-type(3):before{content: "Sunset";}
+    .current:nth-of-type(4):before{content: "Temp";}
+    .current:nth-of-type(5):before{content: "Feels";}
+    .current:nth-of-type(6):before{content: "Pressure";}
+    .current:nth-of-type(7):before{content: "Humidity";}
+    .current:nth-of-type(8):before{content: "Dew Point";}
+    .current:nth-of-type(9):before{content: "UVI";}
+    .current:nth-of-type(10):before{content: "Clouds";}
+    .current:nth-of-type(11):before{content: "Visibility";}
+    .current:nth-of-type(12):before{content: "Wind Speed";}
+    .current:nth-of-type(13):before{content: "Wind Deg";}
+    .current:nth-of-type(14):before{content: "ID";}
+    .current:nth-of-type(15):before{content: "Description";}
+    .current:nth-of-type(16):before{content: "Detailed";}
+    .current:nth-of-type(17):before{content: "Icon";}
+
+    .predata:nth-of-type(1):before{content: "Latitude";}
+    .predata:nth-of-type(2):before{content: "Longitude";}
+    .predata:nth-of-type(3):before{content: "Time Zone";}
+    .predata:nth-of-type(4):before{content: "Offset";}
+
+    .tdhourly:nth-of-type(1):before { content: "Time"; }
+    .tdhourly:nth-of-type(1)
+    {
+        color: deepskyblue;
+        background-color: rgba(0, 0, 0, 0.75);
+    }
+	.tdhourly:nth-of-type(2):before { content: "Temp"; }
+	.tdhourly:nth-of-type(3):before { content: "Feels"; }
+	.tdhourly:nth-of-type(4):before { content: "Pressure"; }
+	.tdhourly:nth-of-type(5):before { content: "Humidity"; }
+	.tdhourly:nth-of-type(6):before { content: "Dew Point"; }
+	.tdhourly:nth-of-type(7):before { content: "Clouds"; }
+	.tdhourly:nth-of-type(8):before { content: "Wind Speed"; }
+	.tdhourly:nth-of-type(9):before { content: "Wind Deg"; }
+    .tdhourly:nth-of-type(10):before { content: "ID"; }
+    .tdhourly:nth-of-type(11):before { content: "Description"; }
+    .tdhourly:nth-of-type(12):before { content: "Detailed"; }
+    .tdhourly:nth-of-type(13):before { content: "Icon"; }
+
+    .tddaily:nth-of-type(1):before{content: "Time";}
+    .tddaily:nth-of-type(1)
+    {
+        color: deepskyblue;
+        background-color: rgba(0, 0, 0, 0.75);
+    }
+    .tddaily:nth-of-type(2):before{content: "Sunrise";}
+    .tddaily:nth-of-type(3):before{content: "Sunset";}
+    .tddaily:nth-of-type(4):before{content: "Day Temp";}
+    .tddaily:nth-of-type(5):before{content: "Min Temp";}
+    .tddaily:nth-of-type(6):before{content: "Max Temp";}
+    .tddaily:nth-of-type(7):before{content: "Night Temp";}
+    .tddaily:nth-of-type(8):before{content: "Eve Temp";}
+    .tddaily:nth-of-type(9):before{content: "Morn Temp";}
+    .tddaily:nth-of-type(10):before{content: "Day Feels";}
+    .tddaily:nth-of-type(11):before{content: "Night Feels";}
+    .tddaily:nth-of-type(12):before{content: "Eve Feels";}
+    .tddaily:nth-of-type(13):before{content: "Morn Feels";}
+    .tddaily:nth-of-type(14):before{content: "Pressure";}
+    .tddaily:nth-of-type(15):before{content: "Humidity";}
+    .tddaily:nth-of-type(16):before{content: "Dew Point";}
+    .tddaily:nth-of-type(17):before{content: "Wind Speed";}
+    .tddaily:nth-of-type(18):before{content: "Wind Deg";}
+    .tddaily:nth-of-type(19):before{content: "ID";}
+    .tddaily:nth-of-type(20):before{content: "Description";}
+    .tddaily:nth-of-type(21):before{content: "Detailed";}
+    .tddaily:nth-of-type(22):before{content: "Icon";}
+    .tddaily:nth-of-type(23):before{content: "Clouds";}
+    .tddaily:nth-of-type(24):before{content: "Rain";}
+    .tddaily:nth-of-type(25):before{content: "UVI";}
+
+    .dropdown
+    {
+        z-index: 5;
+    }
+    .predata_table
+    {
+        width: 90vw !important;
+    }
+    html
+    {
+        height: 100vw;
+        background: url("../img/mobile_background.jpg") no-repeat center center fixed !important;
+        background-size: cover !important; 
+    }
+
+}
+
+body
+{
+    margin: 0;
+    height: 100%;
+}
+html
+{
+    margin: 0;
+    height: 100%;
+    background: url("../img/desktop_background.png") no-repeat center center fixed;
+    background-size: cover; 
+}
+.timeheader
+{
+    background-color: rgba(80, 80, 80, 0.75);
+    color: rgba(200, 200, 200, 1);
+    text-align: center;
+    width: 45vw;
+    margin-left: auto;
+    margin-right: auto; 
+    font-family: 'Roboto';
+    font-size: 175%;
+    font-style: italic;
+    border: 0.10vw solid rgba(0, 0, 0, 0.5);
+    border-collapse: collapse;
+}
+.predata_label
+{
+    background-color: rgba(80, 80, 80, 0.75);
+    color: rgba(200, 200, 200, 1);
+    text-align: center;
+    width: 25vw;
+    margin-left: auto;
+    margin-right: auto; 
+    font-family: 'Roboto';
+    font-size: 175%;
+    font-style: italic;
+    border: 0.10vw solid rgba(0, 0, 0, 0.5);
+    border-collapse: collapse;
+}
+.current_label
+{
+    background-color: rgba(80, 80, 80, 0.75);
+    color: rgba(200, 200, 200, 1);
+    text-align: center;
+    width: 45vw;
+    margin-left: auto;
+    margin-right: auto; 
+    font-family: 'Roboto';
+    font-size: 175%;
+    font-style: italic;
+    border: 0.10vw solid rgba(0, 0, 0, 0.5);
+    border-collapse: collapse;
+}
+.predata_table
+{
+    background-color: rgba(80, 80, 80, 0.75);
+    color: rgba(200, 200, 200, 1);
+    text-align: center;
+    width: 50vw;
+    margin-bottom: 2vw;
+    margin-left: auto;
+    margin-right: auto; 
+    font-family: 'Trebuchet MS';
+    font-weight: bold;
+    border-collapse: collapse;
+}
+.update-reminder
+{
+    background-color: rgba(80, 80, 80, 0.75);
+    color: rgba(200, 200, 200, 1);
+    text-align: center;
+    width: 15vw;
+    margin-bottom: 2vw;
+    margin-left: auto;
+    margin-right: auto; 
+    font-family: 'Trebuchet MS';
+    font-size: 100%;
+    font-weight: bold;
+    border: 0.10vw solid rgba(0, 0, 0, 0.5);
+    border-collapse: collapse;
+}
+.current_table
+{
+    background-color: rgba(80, 80, 80, 0.75);
+    color: rgba(200, 200, 200, 1);
+    text-align: center;
+    width: 90vw;
+    margin-bottom: 2vw;
+    margin-left: auto;
+    margin-right: auto; 
+    font-family: 'Trebuchet MS';
+    font-weight: bold;
+    border-collapse: collapse;
+}
+.tablehourly, .tabledaily
+{
+    background-color: rgba(80, 80, 80, 0.75);
+    color: rgba(200, 200, 200, 1);
+    text-align: center;
+    width: 90vw;
+    margin-bottom: 2vw;
+    margin-left: auto;
+    margin-right: auto;   
+    font-family: 'Trebuchet MS';
+    font-weight: bold;
+    border-collapse: collapse;
+}
+.tableheadhourly, .tableheaddaily
+{
+    background-color: rgba(80, 80, 80, 0.75);
+    color: rgba(200, 200, 200, 1);
+    text-align: center;
+    width: 90vw;
+    margin-bottom: 2vw;
+    margin-left: auto;
+    margin-right: auto;   
+    font-family: 'Trebuchet MS';
+    font-weight: bold;
+}
+.labelhourly, .labeldaily
+{
+    background-color: rgba(80, 80, 80, 0.75);
+    color: rgba(200, 200, 200, 1);
+    text-align: center;
+    width: 45vw;
+    margin-left: auto;
+    margin-right: auto; 
+    font-family: 'Roboto';
+    font-size: 175%;
+    font-style: italic;
+    border: 0.10vw solid rgba(0, 0, 0, 0.5);
+    border-collapse: collapse;
+}
+.tdhourly:hover, .tddaily:hover, .current:hover, .currenth:hover, .predata:hover, .predatah:hover {background-color: rgba(0, 0, 0, 0.75);}
+.tdhourly, .tddaily
+{
+    border: 0.10vw solid rgba(0, 0, 0, 0.5);
+}
+.thhourly, .thdaily
+{
+    border: 0.10vw solid rgba(0, 0, 0, 0.5);
+}
+.current, .currenth
+{
+    border: 0.10vw solid rgba(0, 0, 0, 0.5);
+}
+.predata, .predatah
+{
+    border: 0.10vw solid rgba(0, 0, 0, 0.5);
+}
+.current_header
+{
+    color: deepskyblue;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+.predata_header
+{
+    color: deepskyblue;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+.headrowhourly, .headrowdaily
+{
+    color: deepskyblue;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+.trhourly:nth-of-type(odd), .trdaily:nth-of-type(odd) 
+{ 
+    background: rgba(60, 60, 60, 0.75); 
+}
+.severe_alert
+{
+    display: none;
+    background-color: rgba(80, 80, 80, 0.75);
+    color: rgb(125, 0, 0);
+    text-align: center;
+    width: 90vw;
+    margin-bottom: 2vw;
+    margin-left: auto;
+    margin-right: auto; 
+    font-family: 'Roboto';
+    font-size: 175%;
+    font-style: italic;
+    border: 0.10vw solid rgba(0, 0, 0, 0.5);
+    border-collapse: collapse;
+}
+.linkcontainer a:nth-of-type(even)
+{
+    background: rgba(60, 60, 60, 1); 
+}
+.linkcontainer
+{
+  display: none;
+  position: absolute;
+  min-width: 2vw;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.linkcontainer a
+{
+    background-color: rgba(80, 80, 80, 1);
+    color: rgba(200, 200, 200, 1);
+    padding: 2vw;
+    text-decoration: none;
+    display: block;
+    border: 0.10vw solid rgba(0, 0, 0, 0.5);
+}
+.linkcontainer a:hover {background-color: rgba(0, 0, 0, 1);}
+.dropdown
+{
+    position: fixed;
+    display: inline-block;
+}
+.dropdown:hover .linkcontainer {display:block;}
+.dropdown:hover .dropbtn {background-color: rgba(60, 60, 60, 1);}
+.dropbtn
+{
+    color: deepskyblue;
+    background-color: rgba(80, 80, 80, 1);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.bar
+{
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
+.placelink
+{
+    width: auto;
+}
+.aboutpanel
+{
+    background-color: rgba(80, 80, 80, 0.75);
+    color: rgba(200, 200, 200, 1);
+    text-align: center;
+    width: 45vw;
+    margin-left: auto;
+    margin-right: auto; 
+    font-family: 'Roboto';
+    font-size: 175%;
+    font-style: italic;
+    border: 0.10vw solid rgba(0, 0, 0, 0.5);
+    border-collapse: collapse;
+}
