@@ -1,3 +1,5 @@
+var OMW = config.OWMKEY;
+var WB = config.WBKEY;
 //Define hourly header Array
 var hourlyheaderarray =
 [
@@ -55,7 +57,7 @@ function geoReq()
         console.log("Lat: " + userlat);
         console.log("Long: " + userlong);
         
-        var requesturl = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + userlat + '&lon=' + userlong + '&lang=en&units=imperial&exclude=minutely&appid=e7506d7c6eb87168be341f5e47658ca5';
+        var requesturl = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + userlat + '&lon=' + userlong + '&lang=en&units=imperial&exclude=minutely&appid=' + OMW;
         var request = new XMLHttpRequest();
         request.open('GET', requesturl, true);
         request.onload = function()
@@ -85,7 +87,7 @@ function geoReq()
         }
         request.send();
 
-        var alerturl = 'https://api.weatherbit.io/v2.0/alerts?lat=' + userlat + '&lon=' + userlong + '&key=82f7d352f085429983ef9b3626fa9fb8'; 	
+        var alerturl = 'https://api.weatherbit.io/v2.0/alerts?lat=' + userlat + '&lon=' + userlong + '&key=' + WB; 	
         var alertrequest = new XMLHttpRequest();
         alertrequest.open('GET', alerturl, true);
         alertrequest.onload = function()
